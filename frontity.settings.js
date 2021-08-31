@@ -2,38 +2,17 @@ const settings = {
   "name": "revontuli",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "https://www.revontuli.fr/",
+      "title": "Agence Marketing Digital - Caen - Revontuli",
+      "description": "Agence de Marketing Digital sur Caen. Développement de site internet, Référencement naturel et payant (SEO/SEA). Accompagnement gratuit"
     }
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
+      "name": "revontuli-theme",
       "state": {
         "theme": {
-          "menu": [
-            [
-              "Home",
-              "/"
-            ],
-            [
-              "Nature",
-              "/category/nature/"
-            ],
-            [
-              "Travel",
-              "/category/travel/"
-            ],
-            [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
-              "/about-us/"
-            ]
-          ],
+          "menu": [],
           "featured": {
             "showOnList": false,
             "showOnPost": false
@@ -45,12 +24,20 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://www.wordpress.agence-communication-caen.fr/",
+          "postTypes" : [{
+            type: "prestations",
+            endpoint: "prestations"
+          }],
+          "homepage" : "/accueil",
+          "postsPage" : "/blog"
         }
       }
     },
     "@frontity/tiny-router",
-    "@frontity/html2react"
+    "@frontity/html2react",
+    "@aamodtgroup/frontity-contact-form-7",
+    "react-lineicons"
   ]
 };
 

@@ -1,28 +1,13 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 import List from "./list";
 import FeaturedMedia from "./featured-media";
+import dayjs from "dayjs";
+import * as locale from 'dayjs/locale/fr';
 
-/**
- * The Post component that Mars uses to render any kind of "post type", like
- * posts, pages, attachments, etc.
- *
- * It doesn't receive any prop but the Frontity store, which it receives from
- * {@link connect}. The current Frontity state is used to know which post type
- * should be rendered.
- *
- * @param props - The Frontity store (state, actions, and libraries).
- *
- * @example
- * ```js
- * <Switch>
- *   <Post when={data.isPostType} />
- * </Switch>
- * ```
- *
- * @returns The {@link Post} element rendered.
- */
+
+
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
@@ -31,10 +16,18 @@ const Post = ({ state, actions, libraries }) => {
   // Get the data of the author.
   const author = state.source.author[post.author];
   // Get a human readable date.
-  const date = new Date(post.date);
-
+  const date = dayjs(post.date).locale('fr').format("DD MMMM YYYY", 'fr');
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
+  // Get the categorie
+  const categorie = state.source.category[post.categories];
+
+  const showCategorie = () => {
+    if(!categorie) {
+      return null;
+    }
+    return  <Categorie><Link link={categorie.link}><p className="item">#{categorie.name}</p></Link></Categorie>
+  }
 
   /**
    * Once the post has loaded in the DOM, prefetch both the
@@ -46,24 +39,24 @@ const Post = ({ state, actions, libraries }) => {
   return data.isReady ? (
     <Container>
       <div>
+        {showCategorie()}
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-
-        {/* Hide author and date on pages */}
-        {!data.isPage && (
-          <div>
-            {author && (
-              <StyledLink link={author.link}>
-                <Author>
-                  By <b>{author.name}</b>
-                </Author>
-              </StyledLink>
+        <Info>
+            {/* Only display author and date on posts */}
+            {data.isPost && (
+              <div>
+                {author && (
+                    <Author>
+                      Écrit par <b>{author.name}</b>
+                    </Author>
+                )}
+                <DateWrapper>
+                  {" "}
+                  le <b>{date}</b>
+                </DateWrapper>
+              </div>        
             )}
-            <DateWrapper>
-              {" "}
-              on <b>{date.toDateString()}</b>
-            </DateWrapper>
-          </div>
-        )}
+        </Info>
       </div>
 
       {/* Look at the settings to see if we should include the featured image */}
@@ -71,18 +64,11 @@ const Post = ({ state, actions, libraries }) => {
         <FeaturedMedia id={post.featured_media} />
       )}
 
-      {data.isAttachment ? (
-        // If the post is an attachment, just render the description property,
-        // which already contains the thumbnail.
-        <div dangerouslySetInnerHTML={{ __html: post.description.rendered }} />
-      ) : (
-        // Render the content using the Html2React component so the HTML is
-        // processed by the processors we included in the
-        // libraries.html2react.processors array.
-        <Content>
-          <Html2React html={post.content.rendered} />
-        </Content>
-      )}
+      {/* Render the content using the Html2React component so the HTML is processed
+       by the processors we included in the libraries.html2react.processors array. */}
+      <Content>
+        <Html2React html={post.content.rendered} />
+      </Content>
     </Container>
   ) : null;
 };
@@ -93,17 +79,28 @@ const Container = styled.div`
   width: 800px;
   margin: 0;
   padding: 24px;
+  .item {
+    transition: all 0.2s ease;
+  }
+  .item:hover {
+    opacity: 0.6;
+  }
 `;
 
+const Categorie = styled.div`
+  text-align: center;
+  font-size: 0.7em;
+  color: #FDA05A;
+`
+
 const Title = styled.h1`
+  padding: 0px 10% 10px 10%;
   margin: 0;
   margin-top: 24px;
   margin-bottom: 8px;
-  color: rgba(12, 17, 43);
-`;
-
-const StyledLink = styled(Link)`
-  padding: 15px 0;
+  font-size: 3em;
+  text-align: center;
+  color: #184759;
 `;
 
 const Author = styled.p`
@@ -125,49 +122,44 @@ const DateWrapper = styled.p`
 const Content = styled.div`
   color: rgba(12, 17, 43, 0.8);
   word-break: break-word;
-
   * {
     max-width: 100%;
   }
-
+  h2 {
+    font-size: 2em;
+  }
   p {
+    font-size: 1.3em;
     line-height: 1.6em;
   }
-
   img {
     width: 100%;
     object-fit: cover;
     object-position: center;
   }
-
   figure {
     margin: 24px auto;
-    width: 100%;
-
+    /* next line overrides an inline style of the figure element. */
+    width: 100% !important;
     figcaption {
       font-size: 0.7em;
     }
   }
-
   iframe {
     display: block;
     margin: auto;
   }
-
   blockquote {
     margin: 16px 0;
     background-color: rgba(0, 0, 0, 0.1);
     border-left: 4px solid rgba(12, 17, 43);
     padding: 4px 16px;
   }
-
   a {
     color: rgb(31, 56, 197);
     text-decoration: underline;
   }
-
   /* Input fields styles */
-
   input[type="text"],
   input[type="email"],
   input[type="url"],
@@ -189,12 +181,10 @@ const Content = styled.div`
     outline-color: transparent;
     transition: outline-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     margin: 8px 0 4px 0;
-
     &:focus {
       outline-color: #1f38c5;
     }
   }
-
   input[type="submit"] {
     display: inline-block;
     margin-bottom: 0;
@@ -214,30 +204,30 @@ const Content = styled.div`
     color: #fff;
     background-color: #1f38c5;
   }
-
   /* WordPress Core Align Classes */
-
   @media (min-width: 420px) {
     img.aligncenter,
     img.alignleft,
     img.alignright {
       width: auto;
     }
-
     .aligncenter {
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
-
     .alignright {
       float: right;
       margin-left: 24px;
     }
-
     .alignleft {
       float: left;
       margin-right: 24px;
     }
   }
 `;
+
+const Info = styled.div`
+  text-align: center;
+  margin-bottom: 80px;
+`
