@@ -46,6 +46,9 @@ const ContentPage = styled.div`
     justify-content: center;
     align-items: center;
     gap: 7%;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
 `
 
 const HeadingPage = styled.div`
@@ -53,6 +56,9 @@ const HeadingPage = styled.div`
     border-radius: 15px;
     background-color: #fff;
     width: 40%;
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 `
 
 const ContactForm = styled.div`
@@ -103,6 +109,9 @@ const ContactForm = styled.div`
                 box-shadow: 0px 0px 0px #F28241;
             }
         }
+    }
+    @media (max-width: 767px) {
+
     }
 `
 

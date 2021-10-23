@@ -81,6 +81,11 @@ const HeadingPart = styled.div`
     & > p {
         font-size: 1em;
     }
+    @media (max-width: 767px) {
+        & > h1 {
+            font-size: 3em;
+        }
+    }
 `
 
 const Part = styled.div`
@@ -97,6 +102,9 @@ const Part = styled.div`
 const Name = styled.div`
     display: flex;
     gap: 40px;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
 `
 const NameItem = styled.div`
     position: relative;
@@ -106,6 +114,13 @@ const NameItem = styled.div`
     font-size: 0.5em;
     border-radius: 5px;
     box-shadow: 0px 0px 35px rgba(0,0,0,0.08);
+    @media (max-width: 767px) {
+        width: 100%;
+        margin-top: 40px;
+        & > p {
+            font-size: 2em;
+        }
+    }
 `
 const Anagram = styled.div`
     font-family: 'Londrina Solid', arial;
@@ -131,6 +146,9 @@ const Fondateur = styled.div`
     & > div > p {
         font-size: 1em;
     }
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
 `
 
 const FondateurImg = styled.div`
@@ -140,6 +158,9 @@ const FondateurImg = styled.div`
         width: 300px;
         border-radius: 50%;
         border: 20px solid rgba(255,255,255,0.2);
+    }
+    @media (max-width: 767px) {
+        width: 100%;
     }
 `
 const FondateurTxt = styled.div`

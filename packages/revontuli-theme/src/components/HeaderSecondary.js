@@ -2,7 +2,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 import NavSecondary from "./navSecondary";
-import MobileMenu from "./menu";
+import MobileMenuDark from "./darkmenu";
 
 const HeaderSecondary = ({ state }) => {
     const data = state.source.get("acf-options-page");
@@ -16,7 +16,7 @@ const HeaderSecondary = ({ state }) => {
                 width={data.acf.logoWidth}
             />
         </StyledLink>
-        <MobileMenu />
+        <MobileMenuDark />
         <NavSecondary />
       </Container>
       
@@ -39,6 +39,9 @@ const Container = styled.header`
   justify-content: center;
   justify-content: space-between;
   background-color: #FCF8F0;
+  @media (max-width: 767px){
+    flex-wrap: wrap;
+  }
 `;
 
 const Title = styled.h2`
@@ -48,4 +51,7 @@ const Title = styled.h2`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  justify-item: flex-start;
+  @media (max-width: 767px){
+  }
 `;

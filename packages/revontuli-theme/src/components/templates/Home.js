@@ -34,12 +34,12 @@ const Home = ({ state }) => {
             </Part>
             <Part color="#184759">
                 <Prestation>
-                    <div>
                         <HeaderPrestation>
                             <h2>Nos prestations<br /> de marketing digital à Caen</h2>
                         </HeaderPrestation>
                         <PrestationItems>
                             <Item>
+                                <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/09/creation-site-web-internet-illustration-revontuli-marketing-01-01.png" alt="icone création de site internet sur Caen" />
                                 <h3>Création de site internet</h3>
                                 <p>On développe vos sites sur mesure !  Du cahier des charges jusqu’au développement web en passant par les maquettes.</p>
                                 <LinkStyled>
@@ -47,6 +47,7 @@ const Home = ({ state }) => {
                                 </LinkStyled>
                             </Item>
                             <Item>
+                                <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/referencement-naturel-seo-google-revontulisvg.svg" alt="icone referencement naturel - SEO - SEA" />
                                 <h3>Référencement web SEO - SEA</h3>
                                 <p>On réalise un audit de votre référencement et on vous propose des tas d’opportunités pour gagner en visibilité en référencement naturel ou payant</p>
                                 <LinkStyled>
@@ -54,22 +55,22 @@ const Home = ({ state }) => {
                                 </LinkStyled>
                             </Item>
                             <Item>
+                                <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/exploration-analyse-data-strategie-tracking-web-analyticssvg.svg" alt="Icone Analyse Data et Tracking Web" />
                                 <h3>Analyse data et tracking web</h3>
                                 <p>On fait le point sur vos data et votre outil d’analyse de données pour vous offrir des informations stratégiques sur l’utilisation de vos medias numériques</p>
                                 <LinkStyled>
-                                    <Link link="#">Suivez vos performances</Link>
+                                    <Link link="#">Analysez vos performances Data</Link>
                                 </LinkStyled>
                             </Item>
                             <Item>
+                                <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/transformation-digitale-revontulisvg.svg" alt="Icone transformation digitale et automatisation" />
                                 <h3>Transformation digitale</h3>
-                                <p>On automatise les tâches répétitives pour vous faire gagner en productivité. CRM / Suivi client / Mailing ... </p>
+                                <p>On automatise les tâches répétitives pour vous faire gagner en productivité. CRM / Suivi client / Mailing / Facturation / Prise de RDV ... </p>
                                 <LinkStyled>
                                     <Link link="#">Automatisez votre activité</Link>
                                 </LinkStyled>
                             </Item>
                         </PrestationItems>
-                    </div>
-                    
                 </Prestation>
             </Part>
             <Part color="#fff">
@@ -92,8 +93,7 @@ const Home = ({ state }) => {
                 <HeadingSection>
                     <h2>C'est RE.VON.TU.LI</h2>
                     <h3>Pas Relontuvi ou Revonluti !</h3>
-                    <p>Parce que “Agence digitale” était un nom déjà pris, nous avons voulu prendre le mot qui s’en rapproche le plus : Revontuli.<br /> 
-                    Et on sait que vous allez massacré notre nom lors de notre première rencontre... On ne vous en voudra pas 😉<br /> 
+                    <p>On sait que vous allez massacré notre nom lors de notre première rencontre... On ne vous en voudra pas 😉<br /> 
                     Si vous souhaitez en savoir plus sur la signification et découvrir qui se cache derrière l’agence de marketing digitale Normande du renard, cliquez sur le lien suivant ! </p>
                     <LinkBrut>
                         <Link>Pourkoi le nom Revontuli ?</Link>
@@ -121,12 +121,11 @@ const Home = ({ state }) => {
                         </ButtonSecondary>
                     </ContentCol>
                     <ContentCol className="accompagnement">
-                        <h3>Accompagnement digital gratuit</h3>
-                        <p>Les conseils, on vous les offre. Profitez de notre accompagnement gratuit et illimité !</p>
+                        <h3>Premier accompagnement digital gratuit</h3>
+                        <p>Les premiers conseils, on vous les offre. Profitez de notre accompagnement gratuit</p>
                         <ul>
                             <li>Durée de 30 minutes</li>
                             <li>Par Visio / Chat ou Téléphone</li>
-                            <li>Illimité dans la limite d'un accompagnement par mois</li>
                             <li>Sans engagement ni obligation d'achat</li>
                         </ul>
                         <h4>Ensemble, nous pouvons voir :</h4>
@@ -154,7 +153,7 @@ const Section = styled.div`
     width: 100%;
 `
 
-const Heading = styled.div`
+const Heading = styled.header`
     height: 85vh;
     width: 100%;
     display: flex;
@@ -173,6 +172,15 @@ const Heading = styled.div`
         font-size: 1.5em;
         max-width: 600px;
         line-height: 1.6em;
+    }
+    @media (max-width: 1500px) {
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            max-width: 400px;
+            font-size: 1.2em;
+        }
     }
 `
 
@@ -271,41 +279,62 @@ const HeadingSection = styled.div`
         margin: 0 auto;
         max-width: 700px;
     }
+    @media (max-width: 767px) {
+        h2 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
 `
 
-const Prestation = styled.div`
-    & > div {
+const Prestation = styled.div` 
+
         display: flex;
+        flex-wrap: no-wrap;
         justify-content: space-between;
+
+    & > div  {
     }
-    & > div > div {
-    }
-    & > div > div > h2 {
+    & > div > h2 {
         color: #fff;
         font-size: 2.4em;
     }
-    & > div > div > div > h3 {
+    & > div > div > h3 {
         font-size: 1.8em;
         color: #fff;
         font-weight: 700;
         margin: 40px auto;
         max-width: 700px;
     }
-    & > div > div > div > p {
+    & > div > div >  p {
         color: #fff;
         margin: 0 auto;
         max-width: 700px;
     }
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
 `
 
 const HeaderPrestation = styled.div`
-    width: 33%;
+    width: 30%;
+    @media (max-width: 767px) {
+        width: 100%;
+        text-align: center;
+    }
 `
 
 const PrestationItems = styled.div`
     display: flex;
     width: 66%;
     flex-wrap: wrap;
+    @media (max-width: 767px) {
+        justify-content: center;
+        width: 100%!important;
+        text-align: center;
+    }
 `
 
 const LinkStyled = styled.div`
@@ -329,6 +358,17 @@ const Item = styled.div`
     }
     & > p {
         font-size: 1em;
+    }
+    & > img {
+        max-width: 200px;
+    }
+    @media (max-width: 767px) {
+        padding-right: 0px;
+        width: 100%;
+        margin-bottom: 80px;
+        &:last-child {
+            margin-bottom: 0px; 
+        }
     }
 `
 
@@ -375,10 +415,25 @@ const Content = styled.div`
             font-size: 1.4em;
         }
     }
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+        & > .accompagnement {
+            padding: 40px;
+            margin-left: 0px;
+            max-width: 100%;
+            margin-top: 80px;
+        }
+    }
 `
 
 const ContentCol = styled.div`
     width: 50%;
+    @media (max-width: 767px) {
+        width: 100%;
+        & > h2 {
+            font-size: 3em;
+        }
+    }
 `
 
 const Revontuli = styled.div`
@@ -406,5 +461,12 @@ const Revontuli = styled.div`
         margin: 0;
         z-index: 99;
         position: absolute;
+    }
+    @media (max-width: 767px) {
+        height: 170px;
+        p {
+            padding-top: 40px;
+            font-size: 6em!important;
+        }
     }
 `

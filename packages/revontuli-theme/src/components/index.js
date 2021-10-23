@@ -125,18 +125,19 @@ const globalStyles = css`
     position: absolute;
     color: #FDA05A;
     font-family: 'Londrina Solid', cursive;
+    line-height: 0px;
   }
 
   .moho1 {
-    top: -80px;
-    left: -5%;
+    top: 80px;
+    left: -40px;
     transform: rotateZ(
       -90deg
       );
   }
   .moho2 {
-    top: 100px;
-    right: -5%;
+    bottom: 80px;
+    right: -40px;
     transform: rotateZ(
       90deg
       );
@@ -144,7 +145,21 @@ const globalStyles = css`
   .section {
     width: 100%;
   }
-
+  @media (max-width: 767px) {
+    .moho1, .moho2 {
+      font-size: 5em;
+    }
+  }
+  @media screen and (min-width: 1000px) and (max-width: 1520px) {
+    .moho1, .moho2 {
+      font-size: 8em;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 999px) {
+    .moho1, .moho2 {
+      font-size: 6em;
+    }
+  }
 `;
 
 const HeadContainer = styled.div`

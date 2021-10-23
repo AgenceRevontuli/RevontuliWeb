@@ -83,23 +83,36 @@ const Part = styled.div`
     }
 `
 const HeaderPart = styled.div`
+    box-sizing: border-box;
     & > h1 {
         font-size: 4em;
     }
     text-align: center;
-    width: 750px;
+    max-width: 750px;
     margin: 0 auto; 
+    @media (max-width: 767px) {
+        & > h1 {
+            font-size: 3em;
+        }
+    }
 `
 
 const FormationsItems = styled.div`
     display: flex;
     gap: 40px;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+        gap: 0px;
+    }
 `
 
 const Formation = styled.div`
     width: 25%;
     font-size: 0.8em;
     text-align: left;
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 `
 const FormationInfos = styled.div`
     display: inline-flex;
@@ -145,6 +158,16 @@ const Partenariat = styled.div`
         background-color: #184759;
         border-radius: 15px;
         box-shadow: 4px 5px 0px #F28241;
+    }
+    @media (max-width: 767px) {
+        display: flex; 
+        flex-wrap: wrap;
+        & > div {
+            width: 100%;
+        }
+        & >  .img-exupery {
+            height: 400px;
+        }
     }
 `
 

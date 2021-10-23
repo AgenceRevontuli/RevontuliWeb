@@ -31,6 +31,9 @@ const ReferenceSection = styled.div`
     display: flex;
     bottom: 0;
     margin-top: 60px;
+    @media (max-width:767px) {
+        display: none;
+    }
 `
 
 const Logo = styled.div`

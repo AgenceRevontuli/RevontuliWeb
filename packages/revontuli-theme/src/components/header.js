@@ -27,7 +27,7 @@ const Header = ({ state }) => {
 // Connect the Header component to get access to the `state` in it's `props`
 export default connect(Header);
 
-const Container = styled.div`
+const Container = styled.header`
   z-index: 99;
   width: 100%;
   box-sizing: border-box;
@@ -36,10 +36,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
-  & > a {
-    color: #184759!important;
+  @media (max-width: 767px){
+    flex-wrap: wrap;
   }
 `;
 
@@ -50,4 +49,7 @@ const Title = styled.h2`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  justify-item: flex-start;
+  @media (max-width: 767px){
+  }
 `;

@@ -109,10 +109,18 @@ const Step = styled.div`
     & > h2, h3, h4 {
         color: #fff;
     }
+    @media (max-width: 767px) {
+        h2 {
+            font-size: 2em;
+        }
+    }
 `
 
 const Steps = styled.div`
     display: flex;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
 `
 
 const StepBox = styled.div`
@@ -124,6 +132,10 @@ const StepBox = styled.div`
     }
     & > p {
         font-size: 1em;
+    }
+    @media (max-width: 767px) {
+        width: 100%;
+        padding: 30px; 
     }
 `
 
@@ -161,6 +173,12 @@ const FaqMap = styled.div`
     text-align: left;
     max-width: 700px; 
     margin: 0 auto;
+    @media (max-width: 767px) {
+        h2 {
+            font-size: 2.5em;
+            text-align: center;
+        }
+    }
 `
 const FaqContent = styled.div`
     background-color: #fff;

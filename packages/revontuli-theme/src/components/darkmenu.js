@@ -3,7 +3,7 @@ import { styled, connect, Global } from "frontity";
 import { CloseIcon, HamburgerIcon } from "./menu-icon";
 import MenuModal from "./menu-modal";
 
-function MobileMenu({ state, actions }) {
+function MobileMenuDark({ state, actions }) {
   const { isMobileMenuOpen } = state.theme;
   return (
     <>
@@ -13,10 +13,10 @@ function MobileMenu({ state, actions }) {
             {/* Add some style to the body when menu is open,
             to prevent body scroll */}
             <Global styles={{ body: { overflowY: "hidden" } }} />
-            <CloseIcon color="white" size="24px" />
+            <CloseIcon color="white" size="20px" />
           </>
         ) : (
-          <HamburgerIcon color="white" size="24px" />
+          <HamburgerIcon color="#184759" size="24px" />
         )}
       </MenuToggle>
       {/* If the menu is open, render the menu modal */}
@@ -43,4 +43,4 @@ const MenuToggle = styled.button`
   }
 `;
 
-export default connect(MobileMenu);
+export default connect(MobileMenuDark);

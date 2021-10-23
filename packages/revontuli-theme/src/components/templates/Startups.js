@@ -14,7 +14,7 @@ const Startups = ({ state }) => {
                         <p><span>+ de 150</span> Startups accompagnées</p>
                     </Chiffre>
                     <Chiffre>
-                        <p><span>+ de 2 000</span> Entrepreneurs formés</p>
+                        <p><span>+ de 5 000</span> Entrepreneurs formés</p>
                     </Chiffre>
                     <Chiffre>
                         <p><span>+ de 2 ans</span> À accompagner les statups de <Link link="https://stationf.co/">Station F</Link></p>
@@ -116,12 +116,29 @@ const HeaderStartups = styled.header`
     background-color: #184759;
     border-radius: 15px;
     position: relative;
+    box-sizing: border-box;
+    @media (max-width: 767px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px 5%;
+        padding: 20px 5%;
+    }
 `
 
 const Title1 = styled.h1`
     width: 70%;
     font-size: 4em;
     color: #fff;
+    @media (max-width: 767px) {
+        font-size: 2.3em;
+        width: 100%;
+        text-align: center;
+        & > h1 {
+            width: 100%;
+            text-align: center;
+        }
+    }
 `
 
 const Reassurance = styled.div`
@@ -139,6 +156,13 @@ const Reassurance = styled.div`
 
     & > h2 {
         font-size: 2em;
+    }
+    @media (max-width: 767px) {
+        position: inherit;
+        top: 0;
+        right: 0;
+        width: 100%;
+        background-color: #fff;
     }
 `
 
@@ -163,6 +187,9 @@ const Part = styled.div`
     display: flex;
     justify-content: center: 
     align-items: center;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
 `
 
 const HeadPart = styled.div`
@@ -170,6 +197,17 @@ const HeadPart = styled.div`
     padding-right: 40px;
     & > h2 {
         font-size: 3em;
+    }
+    @media (max-width: 767px) {
+        padding-right: 0px;
+        & > h2 {
+            font-size: 2em;
+        }
+        max-width: 100%;
+        text-align: center;
+        & > p {
+            font-size: 1em;
+        }
     }
 `
 
@@ -181,6 +219,9 @@ const ImgPart = styled.div`
         width: 100%;
         border-radius: 15px;
         box-shadow: 5px 5px 0px #F28241;
+    }
+    @media (max-width: 767px) {
+        width: 100%;
     }
 `
 
@@ -220,6 +261,9 @@ const Presta = styled.div`
     & > p {
         font-size: 1em;
     }
+    @media (max-width: 767px) {
+        padding-right: 0px;
+    }
 `
 
 const PrestaStartups = styled.div`
@@ -229,6 +273,10 @@ const PrestaStartups = styled.div`
     width: 100%;
     margin: 0 auto;
     justify-content: center;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+        gap: 0px;
+    }
 `
 
 const PrestaItem = styled.div`
@@ -238,7 +286,11 @@ const PrestaItem = styled.div`
         font-size: 1.5em;
     }
     & > p {
-        font-size: 0.8em;
+        font-size: 1em;
+    }
+    @media (max-width: 767px) {
+        width: 100%;
+        padding: 10px;
     }
 `
 
@@ -251,11 +303,19 @@ const Presse = styled.div`
     }
     width: 60%;
     padding-left: 100px;
+    @media (max-width: 767px) {
+        margin-top: 200px;
+        width: 100%;
+        padding-left: 0px;
+    }
 `
 const Presse2 = styled.div`
     position: relative;
     width: 40%;
     & > img {
+        width: 100%;
+    }
+    @media (max-width: 767px) {
         width: 100%;
     }
 `
@@ -274,6 +334,11 @@ const SubPress = styled.div`
         font-size: 1em;
         margin-bottom: 0px;
     }
+    @media (max-width: 767px) {
+        bottom: -150px;
+
+    }
+
 `
 
 const Formulaire = styled.div`

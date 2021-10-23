@@ -61,6 +61,9 @@ const FooterInfo = styled.div`
         color: #fff;
         font-size: 1.5em;
     }
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
 `
 
 const ColumnFooter = styled.div`
@@ -76,7 +79,10 @@ const ColumnFooter = styled.div`
     & > p {
         font-size: 1em;
     }
-    
+    @media (max-width: 767px) {
+        width: 100%;
+        text-align: center;
+    }
 `
 
 const Copyright = styled.div`

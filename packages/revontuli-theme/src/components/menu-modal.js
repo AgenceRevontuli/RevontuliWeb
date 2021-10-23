@@ -42,7 +42,7 @@ const MenuModal = ({ state }) => {
 };
 
 const MenuOverlay = styled.div`
-  background-color: #1f38c5;
+  background-color: #184759;
   width: 100vw;
   height: 100vh;
   overflow: hidden auto;
@@ -54,6 +54,7 @@ const MenuOverlay = styled.div`
 
 const MenuContent = styled.div`
   z-index: 3;
+  width: 100%;
 `;
 
 const MenuLink = styled.li`
@@ -80,11 +81,20 @@ const NavItemWithChild = styled.div`
 `;
 
 const ChildMenu = styled.div`
-
+  text-align: center;
+  margin-bottom: 40px;
 `;
 
 const NavItem = styled.div`
-
+    margin: 10px auto;
+    width: 250px;
+    padding: 20px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    &:hover,
+    &:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 `;
 
 export default connect(MenuModal);
