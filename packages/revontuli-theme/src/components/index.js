@@ -53,15 +53,15 @@ const Theme = ({ state }) => {
       <Main>
         <Switch>
           <Contact when={data.route === "/nous-contacter/"} />
+          <Formations when={data.route === "/formations/"} />
+          <Startups when={data.route === "/startups-normandie/"} />
+          <Agence when={data.route === "/agence-marketing/"} />
           <Home when={data.isHome} />
           <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <Prestations when={data.isPrestations} />
           <Post when={data.isPostType} />
           <PageError when={data.isError} />
-          <Startups when={data.isStartups} />
-          <Formations when={data.isFormations} />
-          <Agence when={data.isAgence} />
         </Switch>
       </Main>
       <Footer />

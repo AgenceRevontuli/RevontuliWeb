@@ -46,7 +46,6 @@ const settings = {
     "@frontity/html2react",
     "@aamodtgroup/frontity-contact-form-7",
     "react-lineicons",
-    "@frontity/head-tags",
     "@frontity/yoast"
   ]
 };

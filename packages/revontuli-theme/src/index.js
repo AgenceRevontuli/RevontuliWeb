@@ -19,27 +19,6 @@ const acfOptionsHandler = {
   }
 };
 
-const StartupsHandler = {
-  pattern: "/startups-normandie/",
-  func: ({ state }) => {
-    state.source.data["/startups-normandie/"].isStartups = true;
-  }
-}
-
-const FormationsHandler = {
-  pattern: "/formations/",
-  func: ({ state }) => {
-    state.source.data["/formations/"].isFormations = true;
-  }
-}
-
-const AgenceHandler = {
-  pattern: "/agence-marketing/",
-  func: ({ state }) => {
-    state.source.data["/agence-marketing/"].isAgence = true;
-  }
-}
-
 const revontuliTheme = {
   name: "revontuliTheme",
   roots: {
@@ -81,7 +60,7 @@ const revontuliTheme = {
       processors: [image, iframe, link],
     },
     source: {
-      handlers: [menuHandler, acfOptionsHandler, StartupsHandler, FormationsHandler, AgenceHandler],
+      handlers: [menuHandler, acfOptionsHandler],
     },
   },
 }

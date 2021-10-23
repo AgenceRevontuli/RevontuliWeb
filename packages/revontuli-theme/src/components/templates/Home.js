@@ -9,6 +9,7 @@ import Reference from './Reference';
 const Home = ({ state }) => {
     const data = state.source.get(state.router.link)
     const page = state.source[data.type][data.id]
+    console.log(data);
     return(
         <Section>
             <Heading>

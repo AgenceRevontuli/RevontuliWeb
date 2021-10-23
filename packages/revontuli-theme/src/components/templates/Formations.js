@@ -4,6 +4,9 @@ import Link from "./../link";
 import Fleche from "./../svg/revontuli-fleche-droite.svg";
 
 const Formations = ({ state }) => {
+    const data = state.source.get(state.router.link)
+    const page = state.source
+    console.log(page);
     return(
         <FormationsPage>
             <Part>

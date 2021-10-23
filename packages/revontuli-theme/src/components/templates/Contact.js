@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect, styled } from "frontity";
-import Link from "./../link";
-import Fleche from "./../svg/revontuli-fleche-droite.svg";
 
 const Contact = ({ state, libraries }) => {
     const data = state.source.get(state.router.link)
