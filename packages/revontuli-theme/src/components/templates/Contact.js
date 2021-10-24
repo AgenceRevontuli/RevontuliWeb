@@ -4,8 +4,7 @@ import { connect, styled } from "frontity";
 const Contact = ({ state, libraries }) => {
     const data = state.source.get(state.router.link)
     const page = state.source[data.type][data.id]
-    console.log(page);
-    const Html2React = libraries.html2react.Component;
+    const Html2React = libraries.html2react.Component
     //const page = state.source[data.type][data.id]
     return(
         <ContactPage>

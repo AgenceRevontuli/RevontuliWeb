@@ -10,8 +10,6 @@ const Home = ({ state }) => {
     const data = state.source.get(state.router.link)
     const page = state.source[data.type][data.id]
     const itemsPresta = page.acf.sectionPrestations.itemsPrestations;
-    console.log(itemsPresta);
-    console.log(page.acf.sectionLieu)
     return(
         <Section>
             <Heading>
@@ -98,7 +96,7 @@ const Home = ({ state }) => {
                         <h2>Prêt à développer votre visibilité en ligne ?</h2>
                         <p>Si vous n'avez pas peur de trouver plus de clients et de développer votre chiffre d'affaires, alors on a des choses à faire ensemble 🙂. On vous propose un rendez-vous gratuit pour vous donner nos astuces et nos conseils sur votre stratégie digitale. Sans engagement bien entendu ! Pour cela, il ne reste plus qu'à réserver un créneau.</p>
                         <ButtonSecondary>
-                            <Link link="https://calendly.com/tristantornatore/consulting-gratuit">Réservez un créneau gratuit<img src={Fleche} alt="revontuli-agence-digitale-caen-fleche-droite" width="25px" /></Link>
+                            <Link id="rdv-calendly" link="https://calendly.com/tristantornatore/consulting-gratuit">Réservez un créneau gratuit<img src={Fleche} alt="revontuli-agence-digitale-caen-fleche-droite" width="25px" /></Link>
                         </ButtonSecondary>
                     </ContentCol>
                     <ContentCol className="accompagnement">

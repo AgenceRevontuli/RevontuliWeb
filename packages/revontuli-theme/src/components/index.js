@@ -52,12 +52,12 @@ const Theme = ({ state }) => {
       on the type of URL we are in. */}
       <Main>
         <Switch>
+         <Loading when={data.isFetching} />
           <Contact when={data.route === "/nous-contacter/"} />
-          <Formations when={data.route === "/formations/"} />
+          <Formations when={data.route === "/formations-webmarketing/"} />
           <Startups when={data.route === "/startups-normandie/"} />
           <Agence when={data.route === "/agence-marketing/"} />
           <Home when={data.isHome} />
-          <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <Prestations when={data.isPrestations} />
           <Post when={data.isPostType} />

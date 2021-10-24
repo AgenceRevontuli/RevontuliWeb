@@ -15,20 +15,20 @@ const Footer = ({ state }) => {
                     <ColumnFooter>
                         <h3>Nos prestations digitales</h3>
                         <ul>
-                            <Link><li>Création de site internet</li></Link>
-                            <Link><li>Référencement natuel SEO - SEA</li></Link>
-                            <Link><li>WebAnalytics et Tracking Data</li></Link>
-                            <Link><li>Accompagnement des startups</li></Link>
-                            <Link><li>Formation en marketing digital</li></Link>
+                            <Link link="https://www.revontuli.fr/prestations/creation-site-internet/"><li>Création de site internet</li></Link>
+                            <Link link="https://www.revontuli.fr/prestations/referencement-web-seo-sea-social-ads/"><li>Référencement natuel SEO - SEA</li></Link>
+                            <Link link="https://www.revontuli.fr/prestations/webanalytics-tracking/"><li>WebAnalytics et Tracking Data</li></Link>
+                            <Link link="https://www.revontuli.fr/startups-normandie/"><li>Accompagnement des startups</li></Link>
+                            <Link link="https://www.revontuli.fr/formations-webmarketing/"><li>Formation en marketing digital</li></Link>
                         </ul>
                     </ColumnFooter>
                     <ColumnFooter>
                         <h3>Informations pratiques</h3>
                         <ul>
-                            <Link><li>Nous contacter</li></Link>
-                            <Link><li>Trouver une agence de référencement à Caen - Normandie</li></Link>
-                            <Link><li>Mentions légales</li></Link>
-                            <Link><li>Politique de confidentitalité</li></Link>
+                            <Link link="https://www.revontuli.fr/nous-contacter/"><li>Nous contacter</li></Link>
+                            <Link link="https://www.revontuli.fr/"><li>Trouver une agence de référencement à Caen - Normandie</li></Link>
+                            <Link link="https://www.revontuli.fr/mentions-legales"><li>Mentions légales</li></Link>
+                            <Link link="https://www.revontuli.fr/politique-confidentialite"><li>Politique de confidentitalité</li></Link>
                         </ul>
                     </ColumnFooter>
                 </FooterInfo>
