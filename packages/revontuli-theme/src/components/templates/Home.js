@@ -9,7 +9,9 @@ import Reference from './Reference';
 const Home = ({ state }) => {
     const data = state.source.get(state.router.link)
     const page = state.source[data.type][data.id]
-    console.log(data);
+    const itemsPresta = page.acf.sectionPrestations.itemsPrestations;
+    console.log(itemsPresta);
+    console.log(page.acf.sectionLieu)
     return(
         <Section>
             <Heading>
@@ -34,57 +36,37 @@ const Home = ({ state }) => {
                 </HeadingSection>
             </Part>
             <Part color="#184759">
-                <Prestation>
+                <Prestation id="prestations">
                         <HeaderPrestation>
-                            <h2>Nos prestations<br /> de marketing digital à Caen</h2>
+                            <h2>{page.acf.sectionPrestations.titreH2}</h2>
                         </HeaderPrestation>
                         <PrestationItems>
-                            <Item>
-                                <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/09/creation-site-web-internet-illustration-revontuli-marketing-01-01.png" alt="icone création de site internet sur Caen" />
-                                <h3>Création de site internet</h3>
-                                <p>On développe vos sites sur mesure !  Du cahier des charges jusqu’au développement web en passant par les maquettes.</p>
-                                <LinkStyled>
-                                    <Link link="#">Créez votre site web</Link>
-                                </LinkStyled>
-                            </Item>
-                            <Item>
-                                <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/referencement-naturel-seo-google-revontulisvg.svg" alt="icone referencement naturel - SEO - SEA" />
-                                <h3>Référencement web SEO - SEA</h3>
-                                <p>On réalise un audit de votre référencement et on vous propose des tas d’opportunités pour gagner en visibilité en référencement naturel ou payant</p>
-                                <LinkStyled>
-                                    <Link link="#">Optimisez votre référencement web</Link>
-                                </LinkStyled>
-                            </Item>
-                            <Item>
-                                <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/exploration-analyse-data-strategie-tracking-web-analyticssvg.svg" alt="Icone Analyse Data et Tracking Web" />
-                                <h3>Analyse data et tracking web</h3>
-                                <p>On fait le point sur vos data et votre outil d’analyse de données pour vous offrir des informations stratégiques sur l’utilisation de vos medias numériques</p>
-                                <LinkStyled>
-                                    <Link link="#">Analysez vos performances Data</Link>
-                                </LinkStyled>
-                            </Item>
-                            <Item>
-                                <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/transformation-digitale-revontulisvg.svg" alt="Icone transformation digitale et automatisation" />
-                                <h3>Transformation digitale</h3>
-                                <p>On automatise les tâches répétitives pour vous faire gagner en productivité. CRM / Suivi client / Mailing / Facturation / Prise de RDV ... </p>
-                                <LinkStyled>
-                                    <Link link="#">Automatisez votre activité</Link>
-                                </LinkStyled>
-                            </Item>
+                            {itemsPresta.map((itemPresta) => {
+                                return(
+                                    <Item key={itemPresta.id}>
+                                        <img src={itemPresta.imagePresta.url} alt={itemPresta.imagePresta.alt} />
+                                        <h3>{itemPresta.titrePresta}</h3>
+                                        <p>{itemPresta.textPresta}</p>
+                                    <LinkStyled>
+                                        <Link link={itemPresta.linkPresta}>{itemPresta.textlinkPresta}</Link>
+                                    </LinkStyled>
+                                </Item>
+                                )
+                            })
+                            }
                         </PrestationItems>
                 </Prestation>
             </Part>
             <Part color="#fff">
                 <HeadingSection>
-                    <h2>Fort et vert ! 🍏</h2>
-                    <h3>Agence de Marketing basée à Caen en Normandie </h3>
-                    <p>Pour venir nous faire un coucou, n’hésitez pas à nous rendre visite au MoHo à Caen, on offre le premier café ☕️.</p>
-                    <p>Trop loin ? On se déplace également partout en France pour la réalisation de vos projets, n’hésitez pas à nous envoyer un message pour en discuter (par contre, à vous de nous offrir le café 😜).</p>
+                    <h2>{page.acf.sectionLieu.titreH2}</h2>
+                    <h3>{page.acf.sectionLieu.titreH3}</h3>
+                    <p>{page.acf.sectionLieu.texteSection}</p>
                 </HeadingSection>
                 <BodySection>
                     <img 
-                        src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/08/moho-revontuli-agence-webmarketing-caen-normandie-HQ.jpg" 
-                        alt="moho-revontuli-agence-webmarketing-caen-normandie HQ" 
+                        src={page.acf.sectionLieu.imageLieu.url}
+                        alt={page.acf.sectionLieu.imageLieu.alt}
                     />
                     <p className="moho1">MoHo</p>
                     <p className="moho2">Caen</p>
@@ -92,12 +74,11 @@ const Home = ({ state }) => {
             </Part>
             <Part>
                 <HeadingSection>
-                    <h2>C'est RE.VON.TU.LI</h2>
-                    <h3>Pas Relontuvi ou Revonluti !</h3>
-                    <p>On sait que vous allez massacré notre nom lors de notre première rencontre... On ne vous en voudra pas 😉<br /> 
-                    Si vous souhaitez en savoir plus sur la signification et découvrir qui se cache derrière l’agence de marketing digitale Normande du renard, cliquez sur le lien suivant ! </p>
+                    <h2>{page.acf.sectionName.titreH2}</h2>
+                    <h3>{page.acf.sectionName.titreH3}</h3>
+                    <p>{page.acf.sectionName.texteSection}</p>
                     <LinkBrut>
-                        <Link>Pourkoi le nom Revontuli ?</Link>
+                        <Link link={page.acf.sectionName.linkBtn}>{page.acf.sectionName.texteBtn}</Link>
                     </LinkBrut>   
                 </HeadingSection>
             </Part>
@@ -110,7 +91,6 @@ const Home = ({ state }) => {
                     On travaille avec vous !
                 </SubTitle>
                 <Paragraphe>Main dans la main, nous développons ensemble la stratégie digitale qui convient le mieux à vos besoins, vos objectifs et vos clients finaux. Par ailleurs, on se définit comme votre partenaire plus que votre prestataire. Notre mission ne s'arrête pas là où la prestation s'achève, mais plutôt là où le commence !</Paragraphe>
-                <Methodologie />
             </Part>
             <Part>
                 <Content>
@@ -118,7 +98,7 @@ const Home = ({ state }) => {
                         <h2>Prêt à développer votre visibilité en ligne ?</h2>
                         <p>Si vous n'avez pas peur de trouver plus de clients et de développer votre chiffre d'affaires, alors on a des choses à faire ensemble 🙂. On vous propose un rendez-vous gratuit pour vous donner nos astuces et nos conseils sur votre stratégie digitale. Sans engagement bien entendu ! Pour cela, il ne reste plus qu'à réserver un créneau.</p>
                         <ButtonSecondary>
-                            <Link link="">Être conseillé gratuitement<img src={Fleche} alt="revontuli-agence-digitale-caen-fleche-droite" width="25px" /></Link>
+                            <Link link="https://calendly.com/tristantornatore/consulting-gratuit">Réservez un créneau gratuit<img src={Fleche} alt="revontuli-agence-digitale-caen-fleche-droite" width="25px" /></Link>
                         </ButtonSecondary>
                     </ContentCol>
                     <ContentCol className="accompagnement">
