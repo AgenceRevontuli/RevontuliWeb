@@ -10,9 +10,13 @@ const Formations = ({ state }) => {
     return(
         <FormationsPage>
             <Part>
+                <PhotoFormation>
+                    <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/tristan-tornatore-formation-google-analytics-webmarketing.jpg" alt="tristan-tornatore-formation-google-analytics-webmarketing" />
+                </PhotoFormation>
                 <HeaderPart>
                     <h1>Nos programmes de formation professionnelle sur le Marketing Digtial</h1>
-                    <p>Revontuli est officiellement centre de formation, nous mettons à votre disposition nos expériences et notre pédagogie pour faire évoluer vos connaissances ou celles de vos équipes sur les domaines du Marketing digital, création de site internet, analyses webanalytics et Data. Alors, on commence par quoi ? 🙂</p>
+                    <h2>Revontuli est officiellement centre de formation 🎉</h2>
+                    <p>Nous mettons à votre disposition nos expériences et notre pédagogie pour faire évoluer vos connaissances ou celles de vos équipes sur les domaines du Marketing digital, création de site internet, analyses webanalytics et Data.</p>
                 </HeaderPart>
             </Part>
             <Part color="fff">
@@ -72,12 +76,22 @@ const Formations = ({ state }) => {
 
 export default connect(Formations);
 
+const PhotoFormation = styled.div`
+    width: 100%;
+    margin-bottom: 300px;
+    & > img {
+        border-radius: 10px;
+        box-shadow: 5px 5px 0px #F28241;
+    }
+`
+
 const FormationsPage = styled.div`
     width: 100%;
 `
 const Part = styled.div`
     padding: 80px 10%;
     text-align: center;
+    position: relative;
     background-color: ${props => props.color || "#FCF8F0"};
     & > h2 {
         font-size: 2em;
@@ -86,12 +100,25 @@ const Part = styled.div`
     }
 `
 const HeaderPart = styled.div`
+    position: absolute;
+    top: 30%;
+    right: 50%;
+    transform: translateX(50%);
     box-sizing: border-box;
     & > h1 {
         font-size: 4em;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        padding: 30px;
+        border-radius: 20px;
+    }
+    & > h2 {
+        font-size: 2em;
     }
     text-align: center;
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto; 
     @media (max-width: 767px) {
         & > h1 {
