@@ -16,13 +16,16 @@ const Formations = ({ state }) => {
                 <HeaderPart>
                     <h1>Nos programmes de formation professionnelle sur le Marketing Digtial</h1>
                     <h2>Revontuli est officiellement centre de formation 🎉</h2>
-                    <p>Nous mettons à votre disposition nos expériences et notre pédagogie pour faire évoluer vos connaissances ou celles de vos équipes sur les domaines du Marketing digital, création de site internet, analyses webanalytics et Data.</p>
+                    <p>Nous mettons à votre disposition nos expériences et notre pédagogie pour faire évoluer vos connaissances ou celles de vos équipes sur le domaine du Marketing digital, création de site internet, analyse webanalytic et Data.</p>
                 </HeaderPart>
             </Part>
             <Part color="fff">
                 <h2>Montez en compétence grâce à nos formations sur le Marketing Digital</h2>
                 <FormationsItems>
                     <Formation>
+                        <FormationImage>
+                            <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/formation-creation-site-internet-wordpresssvg.svg" alt="formation-creation-site-internet-wordpress" />
+                        </FormationImage>
                         <h3>Créez son site web sur Wordpress</h3>
                         <FormationInfos>
                             <Duree>2 jours</Duree>
@@ -31,6 +34,9 @@ const Formations = ({ state }) => {
                         <p>Apprenez les bonnes pratiques pour créer un site wordpress. De la mise en place jusqu'à la sécurisation contre le piratage, vous saurez créer et personnaliser des pages, mettre en forme des articles de blogs et optimiser votre référencement naturel.</p>
                     </Formation>
                     <Formation>
+                        <FormationImage>
+                            <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/formation-google-ads-seasvg.svg" alt="formation-google-ads-sea" />
+                        </FormationImage>
                         <h3>Formation Data et Webanalytics</h3>
                         <FormationInfos>
                             <Duree>3 jours</Duree>
@@ -39,6 +45,9 @@ const Formations = ({ state }) => {
                         <p>Assurez le suivi de vos performances sur votre site internet grâce à Google Analytics. Vous apprendrez à baser vos décisions stratégiques sur la Data. Pour aller plus loin, découvrez Google Tag Manager et Google Data Studio.</p>
                     </Formation>
                     <Formation>
+                        <FormationImage>
+                            <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/formation-google-analytics-datasvg.svg" alt="formation-google-analytics-data" />
+                        </FormationImage>
                         <h3>Mettez en place et optimisez vos campagnes Google Ads</h3>
                         <FormationInfos>
                             <Duree>3 jours</Duree>
@@ -47,22 +56,25 @@ const Formations = ({ state }) => {
                         <p>On verra comment créer et paramétrer votre compte Google Ads pour assurer le suivi de vos futurs conversions. Ensuite nous découvrirons les bases de la mise en place d'une campagne Google Ads. Et enfin comment suivre et optimiser les performances.</p>
                     </Formation>
                     <Formation>
+                        <FormationImage>
+                            <img src="https://www.wordpress.agence-communication-caen.fr/wp-content/uploads/2021/10/formation-automation-zapier-airtablesvg.svg" alt="formation-automation-zapier-airtable" />
+                        </FormationImage>
                         <h3>Automatiser vos actions avec Zapier et Airtable</h3>
                         <FormationInfos>
                             <Duree>1 jours</Duree>
                             <Niveau>Intermédiaire</Niveau>
                         </FormationInfos>
-                        <p>Transformez digitalement vos actions pour booster les performances de votre entreprise. Zapier et Airtable sont des outils no-codes qui vous aiderons à créer des processus performants comme un CRM, un outil de facturation ...</p>
+                        <p>Transformez digitalement vos actions pour booster les performances de votre entreprise. Zapier et Airtable sont des outils no-code qui vous aideront à créer des processus performants comme un CRM, un outil de facturation ...</p>
                     </Formation>
                 </FormationsItems>
-                <ButtonSecondary><Link link="https://exupery.io/">Formez-vous au digital <img src={Fleche} alt="revontuli-agence-digitale-caen-fleche-droite" width="25px" /></Link></ButtonSecondary>
+                <ButtonSecondary><Link link="https://www.revontuli.fr/nous-contacter/">Demandez une formation digitale <img src={Fleche} alt="revontuli-agence-digitale-caen-fleche-droite" width="25px" /></Link></ButtonSecondary>
             </Part>
             <Part>
                 <Partenariat>
                     <div>
                         <h2>Un partenaire de confiance pour vous former à la transformation digitale</h2>
-                        <h3>Nos formations sont données en partenariat avec Exupery</h3>
-                        <p>Nous travaillons depuis plusieurs années avec l'organisme de formation Exupery qui met en place des programmes de formations sur la transformation numérique. Leur mission : Accompagner les entreprises dans la transition numérique. Exupery nous apporte leur expertise dans l'ingénierie pédagogique et Revontuli apporte son expertise sur les sujets de développement web et Webanalytics / Data.</p>
+                        <h3>Nos formations sont organisées en partenariat avec Exupery</h3>
+                        <p>Nous travaillons depuis plusieurs années avec l'organisme de formation <strong>Exupery</strong> qui met en place des programmes de formation sur la transformation numérique. Leur mission : Accompagner les entreprises dans la transition numérique. Exupery nous apporte leur expertise dans l'ingénierie pédagogique et Revontuli apporte son expertise sur les sujets de développement web et Webanalytics / Data ainsi que le référencement naturel et payant (SEO, SEA).</p>
                         <ButtonSecondary><Link link="https://exupery.io/">Voir le site du centre de formation Exupery</Link></ButtonSecondary>
                     </div>
                     <div className="img-exupery">
@@ -82,6 +94,18 @@ const PhotoFormation = styled.div`
     & > img {
         border-radius: 10px;
         box-shadow: 5px 5px 0px #F28241;
+    }
+    @media (max-width: 767px) {
+        img {
+            width: 100%;
+            margin-bottom: 100px;
+        }
+    }
+`
+
+const FormationImage = styled.div`
+    & > img {
+        border-radius: 10px;
     }
 `
 
@@ -121,8 +145,17 @@ const HeaderPart = styled.div`
     max-width: 800px;
     margin: 0 auto; 
     @media (max-width: 767px) {
+        top: 20%;
         & > h1 {
-            font-size: 3em;
+            width: 280px;
+            padding: 25px;
+            font-size: 2.2em;
+        }
+        & > h2 {
+            font-size: 1.6em;
+        }
+        & > p {
+            font-size: 1em;
         }
     }
 `

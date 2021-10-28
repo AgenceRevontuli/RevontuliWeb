@@ -10,7 +10,7 @@ const Footer = ({ state }) => {
                 <FooterInfo>
                     <ColumnFooter width="45%">
                         <h3>Revontuli - Agence Marketing Normande</h3>
-                        <p>Basée à Caen en Normandie, l'agence Revontuli vous propose des prestations de maketing digital. Création de site internet, référencement SEO et SEA. WebAnalytics et Data. Transformation numérique. Fondée par Tristan Tornatore ex-Google. Revontuli aide également les startups dans le développement de leur stratégie digitale ainsi que des formations sur les thématiques de développement d'une entreprise grâce à internet.</p>
+                        <p>Basée à Caen en Normandie, l'agence Revontuli vous propose des prestations de maketing digital. Création de site internet, référencement web SEO et SEA. WebAnalytics et Data. Transformation numérique. Fondée par Tristan Tornatore ex-Google. Revontuli aide également les startups dans le développement de leur stratégie digitale ainsi que des formations sur les thématiques de croissance d'une entreprise grâce à internet.</p>
                     </ColumnFooter>
                     <ColumnFooter>
                         <h3>Nos prestations digitales</h3>

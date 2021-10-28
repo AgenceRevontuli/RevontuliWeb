@@ -35,7 +35,7 @@ const Startups = ({ state }) => {
                 <Presta>
                     <h2>Hackez votre croissance</h2>
                     <h3>Growth (Hacking) Marketing</h3>
-                    <p>Votre marché s'est révélé intéressé. Vous avez développez votre première version MVP de votre produit. Il faut maintenant lachez les chevaux. Passez de 100 à 10 000 clients rapidement grâces aux actions de marketing digital qui s'offrent à vous. On vous conseille et on conceptualise un plan d'actions clair qui répondra à vos objectifs.</p>
+                    <p>Votre marché s'est révélé intéressé (POC). Vous avez développez votre première version (MVP) de votre produit. Il faut maintenant lachez les chevaux ! Passez de 100 à 10 000 clients rapidement grâces aux actions de marketing digital qui s'offrent à vous. On vous conseille et on conceptualise un plan d'actions clair qui répondra à vos objectifs.</p>
                 </Presta>
             </Part>
             <Part color="#fff">

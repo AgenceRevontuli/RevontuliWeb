@@ -75,6 +75,10 @@ const globalStyles = css`
 
 @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Londrina+Solid:wght@300&family=Nunito:wght@300;400;600;700&display=swap');
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
