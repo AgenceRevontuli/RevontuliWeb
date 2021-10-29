@@ -118,6 +118,8 @@ const Step = styled.div`
 
 const Steps = styled.div`
     display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     @media (max-width: 767px) {
         flex-wrap: wrap;
     }
@@ -125,8 +127,8 @@ const Steps = styled.div`
 
 const StepBox = styled.div`
     text-align: left;
-    width: 25%;
-    padding: 40px; 
+    width: 28%;
+    padding: 30px; 
     & > h3 {
         font-size: 1.5em;
     }
